@@ -1,4 +1,9 @@
-function validateForm(event) {
+function checkFormSubmission() { // form session management
+    if (sessionStorage.getItem('formSubmitted')) {
+      sessionStorage.removeItem('formSubmitted');
+    }
+}
+function validateForm(event) { // form validation
 event.preventDefault();
 var username = document.getElementById("username").value;
 var password = document.getElementById("password").value;
@@ -18,4 +23,10 @@ if (errorMessage) {
     event.target.submit();
 }
 }
-
+document.getElementById('loginForm').addEventListener('submit', validateForm);
+window.addEventListener('load', checkFormSubmission);
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    sessionStorage.removeItem('formSubmitted');
+  }
+};
