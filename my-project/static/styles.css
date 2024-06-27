@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --primary-color: #28bf96;
+  --primary-color-dark: #209677;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --white: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex; /* firstly none after login it will appear */
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  text-decoration: none;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.header {
+  padding: 0 1rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.content h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.content h1 span {
+  font-weight: 400;
+}
+
+.content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  line-height: 1.75rem;
+}
+
+@media (width < 560px) {
+  .nav__links {
+    display: none;
+  }
+
+  .header {
+    display: block;
+  }
+  .wrapper{
+    left: 0px;
+  }
+  .content {
+    text-align: center
+  }
+}
+
+.wrapper {
+  width: 380px;
+  padding: 40px 50px 20px;
+  position: absolute;
+  right: 8%;
+  background: var(--white);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10px 10px 15px 10px rgba(0,0,0,0.3);
+}
+
+.wrapper form {
+  margin: 40px 0;
+}
+
+form .field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+form .field .input-area {
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+
+form input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  background: none;
+  caret-color:var(--primary-color);
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+
+ form .field input:focus,
+form .field.valid input {
+  border-color: var(--primary-color);
+}
+
+.field .input-area i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  font-size: 18px;
+  pointer-events: none; 
+  transform: translateY(-50%);
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+
+}
+
+form input::placeholder {
+  color: #bfbfbf;
+  font-size: 17px;
+}
+
+form .pass-txt {
+  text-align: left;
+  margin-top: -10px;
+}
+
+.wrapper a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.wrapper a:hover{
+  text-decoration: underline;
+}
+form input[type="submit"]{
+  height: 50px;
+  margin-top: 30px;
+  color: #fff;
+  padding: 0;
+  border: none;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+form input[type="submit"]:hover{
+  background: var(--primary-color-dark);
+}
