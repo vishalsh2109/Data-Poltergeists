@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction-Form</title>
+    <link rel="stylesheet" href="../static/new.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab"></div>
+      <div id="Details" class="tabcontent" style="display: block">
+        <h2>Fill Details</h2>
+        <form id="detailsForm" action="/predict" method="post">
+          <div class="input-group">
+            <div class="input-row">
+              <div class="input-item">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required />
+              </div>
+              <div class="input-item">
+                <label for="adate">Admit date:</label>
+                <input type="date" id="adate" name="adate" required />
+              </div>
+              <div class="input-item">
+                <label for="ddate">Discharge date:</label>
+                <input type="date" id="ddate" name="ddate" required />
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-item">
+                <label for="gender">Select Gender:</label>
+                <select id="gender" name="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="input-item">
+                <label for="Ethnicity">Select Ethnicity:</label>
+                <select id="ethnicity" name="ethnicity">
+                  <option value="white">White</option>
+                  <option value="others">Others</option>
+                  <option value="black_african_american">Black/African American</option>
+                  <option value="hispanic_latino">Hispanic/Latino</option>
+                  <option value="asian">Asian</option>
+                  <option value="declined">Patient Declined to Answer</option>
+                  <option value="middle_eastern">Middle Eastern</option>
+                </select>
+              </div>
+              <div class="input-item">
+                <label for="adm">Admission Type:</label>
+                <select id="admission_type" name="admission_type">
+                  <option value="emergency">Emergency</option>
+                  <option value="newborn">Newborn</option>
+                  <option value="elective">Elective</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-item">
+                <label for="insurance">Insurance:</label>
+                <select id="insurance" name="insurance">
+                  <option value="private">Private</option>
+                  <option value="medicaid">Medicaid</option>
+                  <option value="medicare">Medicare</option>
+                  <option value="self_pay">Self Pay</option>
+                  <option value="government">Government</option>
+                </select>
+              </div>
+              <div class="input-item">
+                <label for="marital_status">Marital Status:</label>
+                <select id="marital_status" name="marital_status">
+                  <option value="divorced">Divorced</option>
+                  <option value="life_partner">Life Partner</option>
+                  <option value="married">Married</option>
+                  <option value="separated">Separated</option>
+                  <option value="single">Single</option>
+                  <option value="widowed">Widowed</option>
+                  <option value="unknown">Unknown</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button type="submit" id="submitBtn">Submit</button>
+        </form>
+      </div>
+      <div id="results" class="card-container"></div>
+    </div>
+  </body>
+</html>
