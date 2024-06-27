@@ -20,6 +20,7 @@ if (password.trim()=== "") {
 if (errorMessage) {
     alert(errorMessage);
 } else {
+    sessionStorage.setItem('formSubmitted', 'true');
     event.target.submit();
 }
 }
